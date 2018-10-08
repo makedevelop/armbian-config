@@ -1,0 +1,5 @@
+md-switch /usr/lib/adquio/nanopi-duo
+switch.sh /usr/lib/adquio/nanopi-duo
+firewall.sh /usr/lib/adquio/nanopi-duo
+interfaces.nanopi-duo /etc/network
+
