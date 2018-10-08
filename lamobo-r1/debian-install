@@ -1,0 +1,4 @@
+switch.sh /usr/lib/adquio/lamobo-r1
+firewall.sh /usr/lib/adquio/lamobo-r1
+interfaces.lamobo-r1 /etc/network
+

@@ -1,0 +1,29 @@
+source /etc/network/interfaces.d/*
+
+# Local loopback
+auto lo
+iface lo inet loopback
+
+# Ethernet switch
+auto eth0
+iface eth0 inet manual
+
+# Wireless
+iface wlan0 inet manual
+
+# LAN
+auto br-lan
+iface br-lan inet static
+	pre-up /usr/lib/adquio/lamobo-r1/switch.sh
+	address 192.168.252.1
+	netmasq 255.255.255.0
+	bridge_stp off
+        bridge_waitport 0
+
+# WAN
+auto br-wan
+iface br-wan inet dhcp
+	bridge_stp off
+        bridge_waitport 0
+	post-up /usr/lib/adquio/lamobo-r1/firewall.sh
+
